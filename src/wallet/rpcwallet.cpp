@@ -350,7 +350,7 @@ static void SendMoney(const CTxDestination &address, CAmount nValue, bool fSubtr
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid amount");
 
     if (nValue > curBalance)
-        throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Insufficient funds");
+        // throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Insufficient funds"); // remove insufficient funds determination for cold sign
 
     if (pwalletMain->GetBroadcastTransactions() && !g_connman)
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
