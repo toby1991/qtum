@@ -2725,7 +2725,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
         if (nValue < 0 || recipient.nAmount < 0)
         {
             strFailReason = _("Transaction amounts must not be negative");
-            return false;
+            //return false; @toby
         }
         nValue += recipient.nAmount;
 
